@@ -1,0 +1,15 @@
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies (if any)
+node_modules/
+dist/
+build/
+*.log
