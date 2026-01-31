@@ -198,12 +198,16 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
-      <span>© FISE</span>
+      <span id="copyright">© <span id="current-year"></span> FISE. All rights reserved.</span>
       <span>Built on open identity standards</span>
       <span>
         <a href="#">Privacy</a> · <a href="#">Terms</a>
       </span>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
