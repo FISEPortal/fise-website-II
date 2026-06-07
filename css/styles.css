@@ -20,7 +20,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--c-bg);
   color: var(--c-navy);
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-weight: 300;
   line-height: 1.7;
   overflow-x: hidden;
@@ -49,11 +49,11 @@ nav {
   background: rgba(244,250,250,0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 0.5px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
 }
 
 .nav-logo {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -111,7 +111,7 @@ section { position: relative; z-index: 1; }
 }
 
 .hero-eyebrow {
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-size: 0.68rem;
   font-weight: 400;
   letter-spacing: 0.28em;
@@ -124,7 +124,7 @@ section { position: relative; z-index: 1; }
 }
 
 .hero-headline {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: clamp(3.2rem, 7vw, 6.2rem);
   font-weight: 300;
   line-height: 1.08;
@@ -184,7 +184,7 @@ section { position: relative; z-index: 1; }
   text-transform: uppercase;
   color: var(--c-deep);
   text-decoration: none;
-  border-bottom: 0.5px solid var(--c-light);
+  border-bottom: 1px solid var(--c-light);
   padding-bottom: 1px;
   transition: border-color 0.25s, color 0.25s;
 }
@@ -194,7 +194,7 @@ section { position: relative; z-index: 1; }
 .hero-signal {
   margin-top: 6rem;
   padding-top: 2.5rem;
-  border-top: 0.5px solid var(--c-border-lg);
+  border-top: 1px solid var(--c-border-lg);
   display: flex;
   gap: 4rem;
   opacity: 0;
@@ -202,7 +202,7 @@ section { position: relative; z-index: 1; }
 }
 
 .signal-num {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: 2.4rem;
   font-weight: 300;
   color: var(--c-navy);
@@ -220,7 +220,7 @@ section { position: relative; z-index: 1; }
 /* ── DIVIDER ── */
 .section-divider {
   width: 100%;
-  height: 0.5px;
+  height: 1px;
   background: var(--c-border-lg);
 }
 
@@ -249,7 +249,7 @@ section { position: relative; z-index: 1; }
 }
 
 .problem-title {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 300;
   line-height: 1.2;
@@ -278,7 +278,7 @@ section { position: relative; z-index: 1; }
 }
 
 .problem-quote p {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: 1.35rem;
   font-style: italic;
   font-weight: 300;
@@ -308,7 +308,7 @@ section { position: relative; z-index: 1; }
 }
 
 .section-title {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 300;
   line-height: 1.18;
@@ -323,12 +323,12 @@ section { position: relative; z-index: 1; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  border: 0.5px solid var(--c-border-lg);
+  border: 1px solid var(--c-border-lg);
 }
 
 .pillar {
   padding: 3rem 2.5rem;
-  border-right: 0.5px solid var(--c-border-lg);
+  border-right: 1px solid var(--c-border-lg);
   position: relative;
   transition: background 0.3s;
 }
@@ -337,7 +337,7 @@ section { position: relative; z-index: 1; }
 .pillar:hover { background: var(--c-bg); }
 
 .pillar-num {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: 3rem;
   font-weight: 300;
   color: var(--c-border-lg);
@@ -349,7 +349,7 @@ section { position: relative; z-index: 1; }
 .pillar:hover .pillar-num { color: var(--c-light); }
 
 .pillar-title {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: 1.35rem;
   font-weight: 400;
   color: var(--c-navy);
@@ -388,7 +388,7 @@ section { position: relative; z-index: 1; }
   grid-template-columns: 1fr 1fr;
   gap: 1px;
   background: var(--c-border-lg);
-  border: 0.5px solid var(--c-border-lg);
+  border: 1px solid var(--c-border-lg);
   margin-top: 4rem;
 }
 
@@ -408,7 +408,7 @@ section { position: relative; z-index: 1; }
 }
 
 .usecase-title {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: 1.25rem;
   font-weight: 400;
   color: var(--c-navy);
@@ -437,7 +437,7 @@ section { position: relative; z-index: 1; }
 }
 
 .ethics-title {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 300;
   line-height: 1.22;
@@ -477,7 +477,7 @@ section { position: relative; z-index: 1; }
 }
 
 .stat-num {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: 3.5rem;
   font-weight: 300;
   color: var(--c-navy);
@@ -495,7 +495,7 @@ section { position: relative; z-index: 1; }
 }
 
 .traction-pull {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: 1.55rem;
   font-weight: 300;
   font-style: italic;
@@ -532,7 +532,7 @@ section { position: relative; z-index: 1; }
 
 .audience-card {
   padding: 2.5rem;
-  border: 0.5px solid var(--c-border-lg);
+  border: 1px solid var(--c-border-lg);
   background: var(--c-white);
   position: relative;
   overflow: hidden;
@@ -568,7 +568,7 @@ section { position: relative; z-index: 1; }
 }
 
 .audience-title {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: 1.25rem;
   font-weight: 400;
   color: var(--c-navy);
@@ -604,7 +604,7 @@ section { position: relative; z-index: 1; }
 }
 
 .cta-title {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: clamp(2rem, 4vw, 3.4rem);
   font-weight: 300;
   line-height: 1.18;
@@ -659,7 +659,7 @@ section { position: relative; z-index: 1; }
   text-transform: uppercase;
   color: rgba(255,255,255,0.6);
   text-decoration: none;
-  border-bottom: 0.5px solid rgba(255,255,255,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
   padding-bottom: 1px;
   transition: color 0.25s, border-color 0.25s;
 }
@@ -668,7 +668,7 @@ section { position: relative; z-index: 1; }
 /* ── FOOTER ── */
 footer {
   background: var(--c-navy);
-  border-top: 0.5px solid rgba(255,255,255,0.07);
+  border-top: 1px solid rgba(255,255,255,0.07);
   padding: 3rem 4rem;
   display: flex;
   align-items: center;
@@ -683,7 +683,7 @@ footer {
 }
 
 .footer-logo {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--c-white);
@@ -755,7 +755,7 @@ a.footer-logo { text-decoration: none; }
   .problem-inner { grid-template-columns: 1fr; gap: 3rem; }
   .solution { padding: 5rem 1.5rem; }
   .solution-pillars { grid-template-columns: 1fr; }
-  .pillar { border-right: none; border-bottom: 0.5px solid var(--c-border-lg); }
+  .pillar { border-right: none; border-bottom: 1px solid var(--c-border-lg); }
   .pillar:last-child { border-bottom: none; }
   .usecase { padding: 5rem 1.5rem; }
   .usecase-grid { grid-template-columns: 1fr; }
