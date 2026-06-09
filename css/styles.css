@@ -298,14 +298,15 @@ section { position: relative; z-index: 1; }
 
 .problem-position-paper {
   margin-top: 1.75rem;
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.5);
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
 }
 
 .problem-position-paper a {
   color: var(--c-light);
   text-decoration: none;
-  border-bottom: 1px solid rgba(107,201,237,0.35);
+  border-bottom: 0.5px solid rgba(107,201,237,0.4);
   padding-bottom: 1px;
   transition: color 0.25s, border-color 0.25s;
 }
@@ -548,8 +549,10 @@ section { position: relative; z-index: 1; }
 .traction-position-paper a {
   color: var(--c-deep);
   text-decoration: none;
-  border-bottom: 1px solid var(--c-light);
+  border-bottom: 0.5px solid var(--c-light);
   padding-bottom: 1px;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
   transition: color 0.25s, border-color 0.25s;
 }
 
