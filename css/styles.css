@@ -301,6 +301,14 @@ section { position: relative; z-index: 1; }
   font-weight: 400;
 }
 
+.problem-body p a {
+  color: var(--c-light);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.problem-body p a:hover { color: var(--c-white); }
+
 .problem-quote {
   margin-top: 2.5rem;
   padding: 1.75rem 2rem;
