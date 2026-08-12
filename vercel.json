@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://signetapp.cloud/:path*",
+      "permanent": true
+    }
+  ]
+}
