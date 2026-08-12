@@ -16,7 +16,7 @@ if (navToggle && navLinks) {
   });
 }
 
-// Copyright year
+// Copyright year text
 document.getElementById('footer-year').textContent = new Date().getFullYear();
 
 // Scroll reveal
