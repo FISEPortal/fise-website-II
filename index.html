@@ -1,268 +1,454 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="images/favicon.png">
-<title>FISE Technologies — Sovereign Infrastructure for Human Data</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,200&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FISE Technologies | BCI Neural Data Governance Solutions</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0B132B',
+                        'obsidian-light': '#1E293B',
+                        'obsidian-dark': '#070A14',
+                        cyan: {
+                            accent: '#00E5FF',
+                            hover: '#00B3CC',
+                        },
+                        slate: {
+                            surface: '#F8FAFC',
+                            border: '#E2E8F0',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-cyan {
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00E5FF 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Yellow Highlight Border Animation */
+        .highlight-yellow {
+            border: 2px solid #FACC15 !important;
+            box-shadow: 0 0 25px rgba(250, 204, 21, 0.85) !important;
+            transform: scale(1.03);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-obsidian text-slate-300 font-sans antialiased selection:bg-cyan-accent selection:text-obsidian">
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo"><img src="images/FISE-logo-cropped.png" alt="FISE" class="nav-logo-img">FISE</a>
-  <ul class="nav-links">
-    <li><a href="#problem">The Problem</a></li>
-    <li><a href="#solution">The Solution</a></li>
-    <li><a href="#usecase">Use Cases</a></li>
-    <li><a href="#traction">Traction</a></li>
-    <li><a href="FISE White Paper.pdf" target="_blank" rel="noopener noreferrer">White Paper</a></li>
-  </ul>
-  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</nav>
+    <!-- NAVIGATION BAR -->
+    <nav class="sticky top-0 z-40 bg-obsidian/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="font-heading font-extrabold text-2xl tracking-wider text-white">FISE<span class="text-cyan-accent">.TECH</span></span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-400">
+                <a href="#regulations" class="hover:text-cyan-accent transition-colors">Regulations</a>
+                <a href="#standards" class="hover:text-cyan-accent transition-colors">Standards</a>
+                <a href="#solutions" class="hover:text-cyan-accent transition-colors">Solutions</a>
+                <a href="#guide" class="hover:text-cyan-accent transition-colors">2026 Guide</a>
+            </div>
+            <div>
+                <a href="#contact" onclick="highlightSupportBtn()" class="bg-cyan-accent hover:bg-cyan-hover text-obsidian font-heading font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-md transition-all glow-cyan inline-block">
+                    Request Audit
+                </a>
+            </div>
+        </div>
+    </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <p class="hero-eyebrow">Sovereign Infrastructure · Protocol Layer · Human Data Rights</p>
-  <h1 class="hero-headline">
-    The most <em>sensitive</em> data ever produced has no protocol protection.
-  </h1>
-  <p class="hero-sub">
-    FISE Technologies is building the sovereign infrastructure layer for neural and biometric data, giving every human ownership, economic control, and verifiable provenance that makes their data rights enforceable in practice.
-  </p>
-  <div class="hero-actions">
-    <a href="#solution" class="btn-ghost">See How It Works →</a>
-  </div>
-  <div class="hero-signal">
-    <div class="signal-item">
-      <div class="signal-num">20+</div>
-      <div class="signal-label">Paying Customers<br>Before MVP</div>
-    </div>
-    <div class="signal-item">
-      <div class="signal-num">9+</div>
-      <div class="signal-label">Years R&amp;D in<br>Sovereign Identity</div>
-    </div>
-    <div class="signal-item">
-      <div class="signal-num">70%</div>
-      <div class="signal-label">Data Revenue<br>to the Human</div>
-    </div>
-    <div class="signal-item">
-      <div class="signal-num">0</div>
-      <div class="signal-label">Known Full-Stack Protocol-Layer Competitors</div>
-    </div>
-  </div>
-</section>
+    <!-- HERO SECTION -->
+    <section class="relative pt-16 pb-24 border-b border-slate-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-<div class="section-divider"></div>
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-cyan-accent/10 border border-cyan-accent/30 rounded-full px-3.5 py-1">
+                    <span class="w-2 h-2 rounded-full bg-cyan-accent animate-pulse"></span>
+                    <span class="font-mono text-xs font-semibold text-cyan-accent tracking-wide uppercase">ISO/IEC TS 27571:2026 & TIPPSS Aligned</span>
+                </div>
 
-<!-- PROBLEM -->
-<section class="problem" id="problem">
-  <div class="problem-inner">
-    <div>
-      <p class="problem-label">The Problem</p>
-      <h2 class="problem-title">You don't own<br><em>yourself</em> online.</h2>
-    </div>
-    <div class="problem-body">
-      <p>Every app, every platform, every AI tool you use was built on infrastructure that, by design, keeps your identity, your health data, your behavioral patterns, and your financial value locked inside someone else's system. <strong>That's not a bug. It's the business model.</strong></p>
-      <p>AI, BCI, and Neurotech are generating the most sensitive data humanity has ever produced: the electrical activity of your mind, the biometric signature of your body, the neural patterns that reveal what you think and feel, before you've consciously decided any of it.</p>
-      <p><a href="./FINAL_Consumer_Neurotechnology_Report_Neurorights_Foundation_April-1.pdf" target="_blank">A 2024 Neurorights Foundation audit</a> of 30 consumer neurotechnology companies found that 97% can and may transfer brain data to third parties, with most providing no meaningful limitations on that access.</p>
-      <p>And you cannot safely or ethically build the next generation of AI and Neurotech on a foundation built to extract rather than elevate.</p>
-      <div class="problem-quote">
-        <p>"Safety and ethics are only as strong as the infrastructure beneath them. Policy without protocol is aspiration without proof."</p>
-      </div>
-      <p class="problem-position-paper">The scientific community identified this gap in 2016 and has worked to address it at the policy layer. The protocol-layer infrastructure to make those protections enforceable has remained unbuilt, until now. <a href="FISE_Position_Paper_Beyond_FAIR_v3.pdf" target="_blank">Read our position paper: Beyond FAIR — The Missing Human Sovereignty Layer →</a></p>
-    </div>
-  </div>
-</section>
+                <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
+                    Turn Emerging Neurodata Laws Into <span class="gradient-text">Enterprise Growth.</span>
+                </h1>
 
-<!-- SOLUTION -->
-<section class="solution" id="solution">
-  <div class="solution-inner">
-    <p class="section-eyebrow reveal">The Solution</p>
-    <h2 class="section-title reveal">Sovereignty at the <em>protocol layer</em> — not the policy layer.</h2>
-    <div class="solution-pillars">
-      <div class="pillar reveal">
-        <div class="pillar-num">01</div>
-        <h3 class="pillar-title">Sovereign Digital Identity</h3>
-        <p class="pillar-body">Every person holds a master digital identity they own and control, connecting their AI agents, BCI devices, and Neurotech sensors under one roof. Choose to sell your data at 70%, or let your device platform sell it with your consent at 30%. Your identity. Your terms.</p>
-        <p class="pillar-accent">Human-Controlled DID Architecture</p>
-      </div>
-      <div class="pillar reveal">
-        <div class="pillar-num">02</div>
-        <h3 class="pillar-title">Smart-Contract Data Economics</h3>
-        <p class="pillar-body">70% of every data sale flows back to the individual, secured by audited smart contracts on the FISE platform. Your data is a registered, trackable asset, and your revenue share is yours for as long as you choose to participate. When a company wants to buy it, your agent negotiates directly; no hidden extraction, and no platform profiting from your data without your explicit consent.</p>
-        <p class="pillar-accent">70 / 30 Human-First Revenue Model</p>
-      </div>
-      <div class="pillar reveal">
-        <div class="pillar-num">03</div>
-        <h3 class="pillar-title">Enforceable Data Rights</h3>
-        <p class="pillar-body">If anyone misuses your data outside agreed terms, it's not just a policy violation, it's a legally documentable breach. FISE's infrastructure is built to support enforcement, putting real teeth behind human data rights for the first time.</p>
-        <p class="pillar-accent">NFT-Anchored Provenance · Legal Standing</p>
-      </div>
-    </div>
-  </div>
-</section>
+                <p class="text-slate-400 text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
+                    Turnkey data governance, consent architecture, and liability mitigation for BCI manufacturers, OEM partners, and individual end-users.
+                </p>
 
-<!-- USE CASE -->
-<section class="usecase" id="usecase">
-  <div class="usecase-inner">
-    <p class="section-eyebrow reveal">Primary Use Case</p>
-    <h2 class="section-title reveal">The <em>most compelling</em> frontier we've found: neural and biometric data.</h2>
-    <div class="usecase-grid reveal">
-      <div class="usecase-card">
-        <svg class="usecase-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="18" cy="18" r="17" stroke="#0866A2" stroke-width="0.8"/>
-          <path d="M10 18c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#0866A2" stroke-width="0.8" stroke-linecap="round"/>
-          <circle cx="18" cy="18" r="3" stroke="#6BC9ED" stroke-width="0.8"/>
-          <path d="M18 15v-4M18 23v-2" stroke="#0866A2" stroke-width="0.8" stroke-linecap="round"/>
-        </svg>
-        <h3 class="usecase-title">Brain-Computer Interfaces</h3>
-        <p class="usecase-body">BCI devices generate continuous neural data, thought patterns, cognitive states, motor intentions. Today, manufacturers claim that data as their own. With FISE, you can assert ownership, monetize on your terms, and create a verifiable record that makes misuse documentable and actionable.</p>
-      </div>
-      <div class="usecase-card">
-        <svg class="usecase-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="18" cy="18" r="17" stroke="#0866A2" stroke-width="0.8"/>
-          <rect x="13" y="11" width="10" height="14" rx="2" stroke="#0866A2" stroke-width="0.8"/>
-          <path d="M15 15h6M15 18h6M15 21h4" stroke="#6BC9ED" stroke-width="0.8" stroke-linecap="round"/>
-        </svg>
-        <h3 class="usecase-title">Neurotech &amp; Wearables</h3>
-        <p class="usecase-body">From EEG headbands to biosensors, the consumer Neurotech market is expanding rapidly, with virtually no data governance beneath it. FISE is building the protocol layer designed to give Neurotech companies a path to compliant operation, and humans a foundation for safe participation.</p>
-      </div>
-      <div class="usecase-card">
-        <svg class="usecase-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="18" cy="18" r="17" stroke="#0866A2" stroke-width="0.8"/>
-          <path d="M12 22l4-8 3 5 2-3 3 6" stroke="#6BC9ED" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3 class="usecase-title">Biotech &amp; Health Data</h3>
-        <p class="usecase-body">Genomic data, biometrics, and health records are among the most valuable, and most exploited, data classes in existence. FISE's sovereignty architecture extends to biotech and is designed to give pharmaceutical research, clinical trials, and health data markets verifiable human consent and documented, transparent terms.</p>
-      </div>
-      <div class="usecase-card">
-        <svg class="usecase-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="18" cy="18" r="17" stroke="#0866A2" stroke-width="0.8"/>
-          <path d="M18 11v4M18 21v4M11 18h4M21 18h4" stroke="#6BC9ED" stroke-width="0.8" stroke-linecap="round"/>
-          <circle cx="18" cy="18" r="3" stroke="#0866A2" stroke-width="0.8"/>
-        </svg>
-        <h3 class="usecase-title">Agentic AI Systems</h3>
-        <p class="usecase-body">
-          When AI agents act on someone's behalf, the question of authorization becomes a real liability issue: who approved this action, and can you prove it? FISE addresses this by anchoring each agent to a human-controlled decentralized identifier (DID), creating a traceable link between agent actions and the person who granted permission.</p>
-      </div>
-    </div>
-  </div>
-</section>
+                <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#solutions" class="bg-cyan-accent hover:bg-cyan-hover text-obsidian font-heading font-bold text-sm px-7 py-3.5 rounded-lg text-center transition-all glow-cyan">
+                        Explore Governance Layer
+                    </a>
+                    <a href="#guide" class="border border-slate-700 hover:border-cyan-accent/50 text-white font-medium text-sm px-7 py-3.5 rounded-lg text-center transition-all">
+                        Read 2026 Compliance Guide ↓
+                    </a>
+                </div>
+            </div>
 
-<!-- ETHICS STRIP -->
-<section class="ethics">
-  <div class="ethics-inner reveal">
-    <div>
-      <h2 class="ethics-title">Making <em>ethics</em> provable, not just aspirational.</h2>
-    </div>
-    <div class="ethics-body">
-      <p>Every breakthrough in AI, BCI, and Neurotech generates continuous streams of the most intimate human data ever produced. Without sovereign infrastructure governing that data from the protocol layer up, safety and ethics remain aspirations without proof.</p>
-      <p>FISE is that infrastructure, designed to make ethical operation provable, not just aspirational. We are the infrastructure layer that makes ethical operation in AI, BCI, and Neurotech provable, enforceable, and commercially viable, enabling compliant, profitable operations amid the controversies reshaping these industries.</p>
-    </div>
-  </div>
-</section>
+            <!-- Hero Risk Highlight Card -->
+            <div class="lg:col-span-5 bg-obsidian-light border border-slate-800 rounded-xl p-6 sm:p-8 space-y-6 shadow-2xl relative">
+                <div class="border-b border-slate-800 pb-4">
+                    <span class="font-mono text-xs text-cyan-accent font-bold uppercase tracking-widest">2026 Regulatory Landscape</span>
+                    <h3 class="text-white font-heading text-xl font-bold mt-1">Key Statutory Shifts</h3>
+                </div>
 
-<!-- TRACTION -->
-<section class="traction" id="traction">
-  <div class="traction-inner">
-    <div class="traction-stats reveal">
-      <div class="stat-block">
-        <div class="stat-num">20+</div>
-        <div class="stat-label">Paying customers before MVP launch</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat-num">9+</div>
-        <div class="stat-label">Years of R&amp;D in sovereign identity infrastructure</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat-num">70%</div>
-        <div class="stat-label">Data revenue to the human</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat-num">0</div>
-        <div class="stat-label">Known Full-Stack Protocol-Layer Competitors</div>
-      </div>
-    </div>
-    <div class="traction-text reveal">
-      <div class="traction-pull">"20+ customers. Zero MVP. That's the signal."</div>
-      <p class="traction-body">Before a product formally launched, 20+ customers came to us, some on a recurring basis. Not because of marketing. Because the problem is real, the moment is now, and there is nothing else building this solution at the protocol level with open, interoperable standards.<br><br>Every competitor is solving one dimension of the problem FISE is solving in full. NBased on our market analysis, no known competitor has connected the human identity layer to the AI/BCI/Neurotech device layer, legally documentable data provenance, and the human-first revenue model in a single interoperable protocol-layer framework. That connection is the category. That connection is the category.</p>
-      <p class="traction-position-paper">
-        <a href="FISE_Position_Paper_Beyond_FAIR_v3.pdf" target="_blank">Read our position paper on why FAIR's unfinished work points directly to FISE →</a>
-      </p>
-    </div>
-  </div>
-</section>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-2 h-2 rounded-full bg-cyan-accent mt-2"></div>
+                        <div>
+                            <span class="text-white font-semibold text-sm block">9+ State Bills Introduced</span>
+                            <span class="text-slate-400 text-xs">CO, CA, CT, and MT explicitly restrict neural data collection.</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-2 h-2 rounded-full bg-red-500 mt-2"></div>
+                        <div>
+                            <span class="text-white font-semibold text-sm block font-mono text-red-400">"Brainprint" Liability</span>
+                            <span class="text-slate-400 text-xs">Persistent signal signatures invalidate traditional de-identification.</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-2 h-2 rounded-full bg-emerald-400 mt-2"></div>
+                        <div>
+                            <span class="text-white font-semibold text-sm block">OEM Downstream Protection</span>
+                            <span class="text-slate-400 text-xs">Contractual & technical governance for multi-party BCI ecosystems.</span>
+                        </div>
+                    </div>
+                </div>
 
-<!-- AUDIENCE -->
-<section class="audience" id="audience">
-  <div class="audience-inner">
-    <p class="section-eyebrow reveal">Who We're Building With</p>
-    <h2 class="section-title reveal">Infrastructure for those who believe <em>human potential</em> requires human protection.</h2>
-    <div class="audience-cards">
-      <div class="audience-card reveal">
-        <span class="audience-tag">You</span>
-        <h3 class="audience-title">Individuals &amp; Data Originators</h3>
-        <p class="audience-body">If you generate data through wearables, biometric devices, or BCI technology acting on your behalf, that data should belong to you. FISE is building the sovereign infrastructure that lets you own, govern, and monetize your most sensitive data on your terms. Join the waitlist and be among the first to participate in a data economy centered around you.</p>
-      </div>
-      <div class="audience-card reveal">
-        <span class="audience-tag">Industry</span>
-        <h3 class="audience-title">Neurotech &amp; BCI Manufacturers</h3>
-        <p class="audience-body">Operating in AI, BCI, or Neurotech means navigating an accelerating wave of regulation, litigation risk, and public scrutiny. FISE is the compliance infrastructure that lets you operate with confidence and the trust signal that differentiates you in a market where ethics is becoming a competitive advantage.</p>
-      </div>
-      <div class="audience-card reveal">
-        <span class="audience-tag">Investors</span>
-        <h3 class="audience-title">VCs &amp; Angels in AI, BCI &amp; Neurotech</h3>
-        <p class="audience-body">If you're deploying capital into AI, BCI, Neurotech, or Biotech, and you believe the next frontier of human potential requires the next frontier of human protection, FISE is the infrastructure layer your portfolio needs beneath every investment you make in this space.</p>
-      </div>
-      <div class="audience-card reveal">
-        <span class="audience-tag">Human Rights</span>
-        <h3 class="audience-title">Neurorights &amp; Policy Organizations</h3>
-        <p class="audience-body">Legislation protects neural data at the policy layer. FISE protects it at the protocol layer. We are the technical infrastructure that makes neurorights enforceable in practice, not just in statute. We are actively building relationships with the organizations advancing this mission globally.</p>
-      </div>
-    </div>
-  </div>
-</section>
+                <div class="pt-2">
+                    <div class="bg-obsidian-dark rounded-lg p-3 border border-slate-800 text-center">
+                        <span class="font-mono text-xs text-emerald-400 font-medium">✓ Audit-Ready Infrastructure Standard</span>
+                    </div>
+                </div>
+            </div>
 
-<!-- CTA -->
-<section class="cta-section" id="connect">
-  <div class="cta-inner reveal">
-    <p class="cta-eyebrow">Lset's Build Together</p>
-      <h2 class="cta-title">The sovereign infrastructure layer for the <em>age of neural data</em>.</h2>
-      <p class="cta-sub">Whether you're deploying capital, advancing neurorights policy, or building in AI, BCI, or Neurotech, we want to be in conversation with you.</p>
-      <div class="cta-actions">
-        <a href="mailto:info@fisetech.ai" class="btn-light" target="_blank" rel="noopener noreferrer">Get in Touch</a>
-        <a href="team.html" clas="btn-outline" style="margin-top: 0.25rem;">Meet the FISE Team →</a>
-      <div class="cta-social-links">
-        <a href="https://www.linkedin.com/company/fisetechai/" class="btn-outline" target="_blank" rel="noopener noreferrer">Follow on LinkedIn →</a>
-        <a href="https://bsky.app/profile/fisetech.bsky.social" class="btn-outline" target="_blank" rel="noopener noreferrer">Follow on Bluesky →</a>
-        <a href="FISE%20White%20Paper.pdf" class="btn-outline" target="_blank" rel="noopener noreferrer">White Paper</a>
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-  <a href="#" class="footer-logo"><img src="images/FISE-logo-cropped.png" alt="FISE" class="footer-logo-img">FISE</a>
-  <div class="footer-center">
-    <div class="footer-tagline">The Sovereign Infrastructure Layer for Neural &amp; Biometric Data</div>
-    <div class="footer-legal">
-      <a href="./privacy-policy-May2026.html" class="footer-legal-link" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-      <span class="footer-legal-sep">·</span>
-      <a href="./terms-conditions-May2026.html" class="footer-legal-link" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
-    </div>
-    <div class="footer-copy">© <span id="footer-year"></span> FISE Technologies</div>
-  </div>
-  <div class="footer-copy" style="opacity:0; pointer-events:none;">FISE Technologies</div>
-</footer>
+    <!-- REGULATORY MATRIX SECTION (Light Background) -->
+    <section id="regulations" class="py-20 bg-slate-surface text-obsidian">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="font-mono text-xs font-bold text-cyan-600 uppercase tracking-widest">Regulatory Exposure Matrix</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">One-time EULAs No Longer Satisfy Mandates</h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Emerging state and international frameworks require specific, affirmative, and revocable consent per processing event.
+                </p>
+            </div>
 
-<script src="js/main.js"></script>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white border border-slate-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold text-sm mb-4">US</div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">State Neural Laws</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Colorado, California, Connecticut, and Montana classify neural data as sensitive personal info, requiring affirmative opt-in consent and explicit revocation pathways.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white border border-slate-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm mb-4">BIO</div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Biometric Risk & BIPA</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        BIPA litigation precedents highlight class-action exposure. Unique EEG "brainprints" mean de-identified neural data retains persistent re-identification risks.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white border border-slate-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm mb-4">EU</div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">GDPR & EU AI Act</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Distinguishes Controller vs. Processor duties. Processors carry statutory obligations, direct regulatory exposure, and downstream multi-partner liabilities.
+                    </p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white border border-slate-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-sm mb-4">USER</div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">End-User Control</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        User-facing mechanisms allow individuals to scope, grant, and revoke permissions for specific third parties without sacrificing real-time signal flow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL STANDARDS ENGINE & GAP -->
+    <section id="standards" class="py-20 border-b border-slate-800 bg-obsidian-dark">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-12">
+                <span class="font-mono text-xs text-cyan-accent font-bold uppercase tracking-widest">Technical Standards Integration</span>
+                <h2 class="font-heading text-3xl font-extrabold text-white mt-2">Bridging the Gap Between Neural Formats & Identity</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Standard Box 1 -->
+                <div class="bg-obsidian-light border border-slate-800 rounded-xl p-8">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="font-mono text-xs bg-slate-800 text-cyan-accent px-2.5 py-1 rounded">ISO/IEC TS 27571:2026</span>
+                        <span class="font-mono text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">IEEE/UL 2933 TIPPSS</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">BCI Data & Security Frameworks</h3>
+                    <ul class="text-slate-400 text-xs sm:text-sm space-y-2.5 list-disc list-inside">
+                        <li>Standardizes raw, processed, and metadata structures for non-invasive BCI.</li>
+                        <li>Separates signal pipelines from consent and provenance annotations.</li>
+                        <li>TIPPSS defines Trust, Identity, Privacy, Protection, Safety, and Security.</li>
+                    </ul>
+                </div>
+
+                <!-- Standard Box 2 (The Gap) -->
+                <div class="bg-obsidian-light border border-cyan-accent/40 rounded-xl p-8 relative overflow-hidden">
+                    <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-cyan-accent/10 rounded-full blur-2xl"></div>
+                    <span class="font-mono text-xs text-red-400 font-bold uppercase tracking-wider block mb-2">The Critical Governance Gap</span>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Data Formats Exclude Identity Standards</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                        Published BCI data-format standards (ISO/IEC TS 27571) do NOT specify integration with decentralized identity (W3C DIDs or Verifiable Credentials).
+                    </p>
+                    <div class="bg-obsidian p-4 rounded-lg border border-slate-800">
+                        <p class="text-cyan-accent text-xs font-mono">
+                            <strong>FISE Solution:</strong> We provide the off-the-shelf governance layer linking BCI data structures directly to portable identity and auditable consent.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTIONS SECTION: IMPLEMENTATION STRATEGY -->
+    <section id="solutions" class="py-20 border-b border-slate-800 bg-obsidian">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="font-mono text-xs text-cyan-accent font-bold uppercase tracking-widest">Implementation Strategy</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">In-House Build vs. Shared Audited Infrastructure</h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Every organization evaluates technical autonomy differently. Compare the trade-offs to determine the best approach for your BCI data pipeline.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+                <!-- In-House Option -->
+                <div class="bg-obsidian-light border border-slate-800 rounded-xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4 min-h-[28px]">
+                            <span class="font-mono text-xs bg-slate-800/80 text-slate-300 border border-slate-700 px-3 py-1 rounded">Option A</span>
+                            <span class="text-slate-500 text-xs font-mono">Custom Proprietary Build</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white mb-3 min-h-[32px] flex items-center">In-House Governance Architecture</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6 min-h-[52px]">
+                            Develop custom consent state machines, cryptographic audit logging, and regulatory mapping internally within your engineering team.
+                        </p>
+
+                        <!-- Pros -->
+                        <div class="mb-6 space-y-3">
+                            <h4 class="font-mono text-xs font-bold text-emerald-400 uppercase tracking-wider">Pros</h4>
+                            <ul class="space-y-2 text-xs text-slate-300">
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-emerald-400 font-bold">+</span>
+                                    <span><strong>Complete In-House Control:</strong> Total ownership of proprietary consent mechanisms and data storage code.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-emerald-400 font-bold">+</span>
+                                    <span><strong>Zero Vendor Dependency:</strong> No integration with third-party software providers or external SaaS layers.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-emerald-400 font-bold">+</span>
+                                    <span><strong>Hardware Tailoring:</strong> Custom-fitted directly into unique, non-standard BCI firmware specifications.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Cons -->
+                        <div class="space-y-3">
+                            <h4 class="font-mono text-xs font-bold text-amber-400 uppercase tracking-wider">Cons</h4>
+                            <ul class="space-y-2 text-xs text-slate-300">
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-amber-400 font-bold">-</span>
+                                    <span><strong>Ongoing Resource Overhead:</strong> Continuous legal, security, and engineering maintenance across 9+ state laws.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-amber-400 font-bold">-</span>
+                                    <span><strong>Sole Liability Risk:</strong> Full legal responsibility for compliance verification without third-party audit backing.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-amber-400 font-bold">-</span>
+                                    <span><strong>Extended Time-to-Market:</strong> Multi-quarter development timeline before achieving full audit readiness.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shared Audited Infrastructure Option -->
+                <div class="bg-obsidian-light border border-slate-700 rounded-xl p-8 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -right-12 -top-12 w-40 h-40 bg-cyan-accent/5 rounded-full blur-2xl"></div>
+                    <div>
+                        <div class="flex justify-between items-center mb-4 min-h-[28px]">
+                            <span class="font-mono text-xs bg-cyan-accent/10 text-cyan-accent border border-cyan-accent/30 px-3 py-1 rounded">Option B</span>
+                            <span class="text-cyan-accent text-xs font-mono">Turnkey Layer</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white mb-3 min-h-[32px] flex items-center">Shared Audited Infrastructure</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6 min-h-[52px]">
+                            Build an interoperable, fully auditable consent and identity layer that aligns with applicable standards and regulations and integrates directly with existing downstream BCI pipelines through standard APIs.
+                        </p>
+
+                        <!-- Pros -->
+                        <div class="mb-6 space-y-3">
+                            <h4 class="font-mono text-xs font-bold text-emerald-400 uppercase tracking-wider">Pros</h4>
+                            <ul class="space-y-2 text-xs text-slate-300">
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-emerald-400 font-bold">+</span>
+                                    <span><strong>Immediate Audit Readiness:</strong> Turnkey alignment with ISO/IEC TS 27571:2026 and state mandates.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-emerald-400 font-bold">+</span>
+                                    <span><strong>Mitigated Liability:</strong> Distributed liability framework supported by cryptographically auditable log chains.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-emerald-400 font-bold">+</span>
+                                    <span><strong>Low Development Overhead:</strong> Off-the-shelf W3C DID and Verifiable Credential integration out of the box.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Cons -->
+                        <div class="space-y-3">
+                            <h4 class="font-mono text-xs font-bold text-amber-400 uppercase tracking-wider">Cons</h4>
+                            <ul class="space-y-2 text-xs text-slate-300">
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-amber-400 font-bold">-</span>
+                                    <span><strong>External Infrastructure Reliance:</strong> Requires maintaining API compatibility with standard governance protocols.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-amber-400 font-bold">-</span>
+                                    <span><strong>Recurring Platform Cost:</strong> Annual licensing or SaaS overhead compared to pure internal capital expenditure.</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-amber-400 font-bold">-</span>
+                                    <span><strong>Integration Coordination:</strong> Requires initial alignment between internal SDKs and external consent services.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INCLUDED PAPER & GUIDE SECTION -->
+    <section id="guide" class="py-20 bg-obsidian-light border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-obsidian border border-slate-800 rounded-2xl p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+                <!-- Whitepaper Cover Mock -->
+                <div class="lg:col-span-4 bg-white rounded-lg p-6 text-obsidian shadow-2xl space-y-4 border-t-4 border-cyan-accent">
+                    <div class="flex justify-between items-center text-[10px] font-mono text-slate-500 font-bold">
+                        <span>FISE TECHNOLOGIES</span>
+                        <span>AUGUST 2026</span>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-heading font-extrabold text-base text-slate-900 leading-snug">2026 NEURAL DATA COMPLIANCE GUIDE</h4>
+                        <p class="text-xs font-semibold text-cyan-600">FOR BCI MANUFACTURERS</p>
+                    </div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                        Data governance, liability, and consent for brain-computer interface manufacturers.
+                    </p>
+                    <div class="pt-4 border-t border-slate-100 text-[10px] text-slate-500 font-medium">
+                        Authored by M.E. Nara Lau, CEO Founder
+                    </div>
+                </div>
+
+                <!-- Guide Content Summary -->
+                <div class="lg:col-span-8 space-y-6">
+                    <span class="font-mono text-xs text-cyan-accent font-bold uppercase tracking-widest">Included Research Paper</span>
+                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-white">
+                        2026 Neural Data Compliance Guide for BCI Manufacturers
+                    </h2>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                        Written by M.E. Nara Lau (CEO Founder, FISE Technologies), this guide provides initial context on statutory shifts, biometric privacy risks, technical standards, and a 6-point compliance checklist.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-cyan-accent">✓</span>
+                            <span>CO, CA, CT, MT Neural Laws Analysis</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-cyan-accent">✓</span>
+                            <span>ISO/IEC TS 27571:2026 Architecture</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-cyan-accent">✓</span>
+                            <span>BIPA & Persistent "Brainprint" Risks</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-cyan-accent">✓</span>
+                            <span>2026 Governance Checklist</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-4">
+                        <a href="BCI-Manufacturers-Guide-2026-Final.pdf" target="_blank" rel="noopener noreferrer" class="bg-cyan-accent hover:bg-cyan-hover text-obsidian font-heading font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-lg transition-all glow-cyan inline-block">
+                            Read Guide Now ↗
+                        </a>
+                        <a href="#contact" onclick="highlightSupportBtn()" class="border border-slate-700 hover:border-cyan-accent text-white font-heading font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-lg transition-all inline-block">
+                            Request Custom Audit
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CTA & CONTACT -->
+    <footer id="contact" class="py-16 bg-obsidian-dark text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center border-b border-slate-800 pb-12">
+            <div>
+                <h3 class="font-heading text-2xl font-bold text-white mb-2">Ready to Govern Your Neural Data Pipeline?</h3>
+                <p class="text-slate-400 text-xs">Contact FISE Technologies to schedule a confidential technical architecture and liability review.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                <a id="supportEmailBtn" href="mailto:support@fise.tech" class="bg-cyan-accent hover:bg-cyan-hover text-obsidian font-heading font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-lg text-center transition-all duration-300 glow-cyan">
+                    Email support@fise.tech
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 pt-8 flex flex-col sm:flex-row justify-between items-center text-slate-500">
+            <p>© 2026 FISE Technologies. All rights reserved.</p>
+            <p class="mt-2 sm:mt-0">Neural Data Governance & Compliance Solutions</p>
+        </div>
+    </footer>
+
+    <!-- SIMPLE JS FOR BUTTON HIGHLIGHT -->
+    <script>
+        function highlightSupportBtn() {
+            const btn = document.getElementById('supportEmailBtn');
+            if (btn) {
+                btn.classList.add('highlight-yellow');
+                setTimeout(() => {
+                    btn.classList.remove('highlight-yellow');
+                }, 3500);
+            }
+        }
+    </script>
 </body>
 </html>
