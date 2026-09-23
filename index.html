@@ -47,12 +47,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        /* Yellow Highlight Border Animation */
-        .highlight-yellow {
-            border: 2px solid #FACC15 !important;
-            box-shadow: 0 0 25px rgba(250, 204, 21, 0.85) !important;
-            transform: scale(1.03);
-        }
     </style>
 </head>
 <body class="bg-obsidian text-slate-300 font-sans antialiased selection:bg-cyan-accent selection:text-obsidian">
@@ -71,7 +65,7 @@
                 <a href="#research" class="hover:text-cyan-accent transition-colors">Research</a>
             </div>
             <div>
-                <a href="#contact" onclick="highlightSupportBtn()" class="bg-cyan-accent hover:bg-cyan-hover text-obsidian font-heading font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-md transition-all glow-cyan inline-block">
+                <a href="https://calendar.proton.me/u/2/bookings#QBH3dyY5qPnpiPmmttFG3xwj5f04EwBrR3W5FQiMUPM=" target="_blank" rel="noopener noreferrer" class="bg-cyan-accent hover:bg-cyan-hover text-obsidian font-heading font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-md transition-all glow-cyan inline-block">
                     Free Gap Assessment
                 </a>
             </div>
@@ -97,7 +91,7 @@
                 </p>
 
                 <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" onclick="highlightSupportBtn()" class="bg-cyan-accent hover:bg-cyan-hover text-obsidian font-heading font-bold text-sm px-7 py-3.5 rounded-lg text-center transition-all glow-cyan">
+                    <a href="https://calendar.proton.me/u/2/bookings#QBH3dyY5qPnpiPmmttFG3xwj5f04EwBrR3W5FQiMUPM=" target="_blank" rel="noopener noreferrer" class="bg-cyan-accent hover:bg-cyan-hover text-obsidian font-heading font-bold text-sm px-7 py-3.5 rounded-lg text-center transition-all glow-cyan">
                         Book a Free Gap Assessment
                     </a>
                     <a href="#depth" class="border border-slate-700 hover:border-cyan-accent/50 text-white font-medium text-sm px-7 py-3.5 rounded-lg text-center transition-all">
@@ -365,7 +359,7 @@
                         <a href="BCI-Manufacturers-Guide-2026-Final.pdf" target="_blank" rel="noopener noreferrer" class="bg-cyan-accent hover:bg-cyan-hover text-obsidian font-heading font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-lg transition-all glow-cyan inline-block">
                             Read the Guide ↗
                         </a>
-                        <a href="#contact" onclick="highlightSupportBtn()" class="border border-slate-700 hover:border-cyan-accent text-white font-heading font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-lg transition-all inline-block">
+                        <a href="https://calendar.proton.me/u/2/bookings#QBH3dyY5qPnpiPmmttFG3xwj5f04EwBrR3W5FQiMUPM=" target="_blank" rel="noopener noreferrer" class="border border-slate-700 hover:border-cyan-accent text-white font-heading font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-lg transition-all inline-block">
                             Apply It to Your Product
                         </a>
                     </div>
@@ -608,8 +602,8 @@
                 <p class="text-slate-400 text-xs">Book a free 30-minute compliance gap assessment. We map your exposure across current and pending state laws, then send a scoped proposal within 10 business days.</p>
             </div>
             <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 md:justify-end">
-                <a id="supportEmailBtn" href="mailto:support@fise.tech?subject=Compliance%20Gap%20Assessment" class="bg-cyan-accent hover:bg-cyan-hover text-obsidian font-heading font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-lg text-center transition-all duration-300 glow-cyan">
-                    support@fise.tech
+                <a href="https://calendar.proton.me/u/2/bookings#QBH3dyY5qPnpiPmmttFG3xwj5f04EwBrR3W5FQiMUPM=" target="_blank" rel="noopener noreferrer" class="bg-cyan-accent hover:bg-cyan-hover text-obsidian font-heading font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-lg text-center transition-all duration-300 glow-cyan">
+                    Book Free Assessment
                 </a>
             </div>
         </div>
@@ -618,18 +612,5 @@
             <p class="mt-2 sm:mt-0">Biosignal Data Consent &amp; Governance</p>
         </div>
     </footer>
-
-    <!-- SIMPLE JS FOR BUTTON HIGHLIGHT -->
-    <script>
-        function highlightSupportBtn() {
-            const btn = document.getElementById('supportEmailBtn');
-            if (btn) {
-                btn.classList.add('highlight-yellow');
-                setTimeout(() => {
-                    btn.classList.remove('highlight-yellow');
-                }, 3500);
-            }
-        }
-    </script>
 </body>
 </html>
