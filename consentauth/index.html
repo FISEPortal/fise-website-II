@@ -278,11 +278,19 @@ footer p + p { margin-top: 4px; }
   .ctas .btn { width: 100%; }
 }
 @media (min-width: 721px) { .nav-short { display: none; } }
-/* Request a sender account */
+/* Request an account */
 .request-form { max-width: 640px; margin: 0 auto; display: grid; gap: 18px; }
 .request-form .field { display: grid; gap: 6px; }
 .request-form label { font-weight: 600; color: var(--ink); }
 .request-form .opt { font-weight: 400; color: var(--muted); }
+.request-form .receiver { display: grid; gap: 18px; padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.request-form .receiver[hidden] { display: none; }
+.request-form .tick { display: flex; align-items: flex-start; gap: 10px; font-weight: 400; color: var(--body); }
+.request-form .tick input { width: 20px; height: 20px; min-height: 0; margin: 2px 0 0; flex: none; accent-color: var(--brand); }
+.request-form fieldset.choice { border: 0; margin: 0; padding: 0; display: grid; gap: 10px; }
+.request-form legend { font-weight: 600; color: var(--ink); margin-bottom: 4px; padding: 0; }
+.request-form .choice label { display: flex; align-items: center; gap: 10px; font-weight: 400; color: var(--body); min-height: 24px; }
+.request-form .choice input { width: 20px; height: 20px; min-height: 0; margin: 0; accent-color: var(--brand); }
 .request-form input, .request-form textarea { font: inherit; color: var(--ink); background: #fff; border: 2px solid #94A3B8; border-radius: 10px; padding: 12px 14px; min-height: 48px; width: 100%; box-sizing: border-box; }
 .request-form input:focus-visible, .request-form textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 .request-form button { border: 0; cursor: pointer; font: inherit; font-weight: 600; }
@@ -548,28 +556,38 @@ footer p + p { margin-top: 4px; }
       <div class="step"><p class="n">3</p><h3>Implementation sessions</h3><p>We set up ConsentAuth around your process.</p></div>
       <div class="step"><p class="n">4</p><h3>Pilot</h3><p>BAA where needed. Go live.</p></div>
     </div>
-    <div class="ctas" style="justify-content:center"><a class="btn btn-primary" href="https://calendar.proton.me/bookings#QBH3dyY5qPnpiPmmttFG3xwj5f04EwBrR3W5FQiMUPM=" target="_blank" rel="noopener noreferrer">Start with step 1: book your free review</a><a class="btn btn-ghost" href="#request">Request a sender account</a></div>
+    <div class="ctas" style="justify-content:center"><a class="btn btn-primary" href="https://calendar.proton.me/bookings#QBH3dyY5qPnpiPmmttFG3xwj5f04EwBrR3W5FQiMUPM=" target="_blank" rel="noopener noreferrer">Start with step 1: book your free review</a><a class="btn btn-ghost" href="#request">Request an account</a></div>
   </div>
 </section>
 
 <section class="white" id="request">
   <div class="wrap">
     <div class="head center">
-      <p class="eyebrow">Sender accounts</p>
-      <h2 class="h2">Request a sender account</h2>
+      <p class="eyebrow">Accounts</p>
+      <h2 class="h2">Request an account</h2>
       <p class="lead">Tell us about your organization. We'll reply by email to talk through what you need and set up your account.</p>
     </div>
     <form class="request-form" id="request-form" novalidate>
       <div class="field"><label for="rq-name">Your name</label><input id="rq-name" name="name" required maxlength="200" autocomplete="name"></div>
       <div class="field"><label for="rq-email">Work email</label><input id="rq-email" name="email" type="email" required maxlength="254" autocomplete="email"></div>
       <div class="field"><label for="rq-org">Organization</label><input id="rq-org" name="organization" required maxlength="200" autocomplete="organization"></div>
-      <div class="field"><label for="rq-msg">What do you need? <span class="opt">(optional)</span></label><textarea id="rq-msg" name="message" rows="4" maxlength="2000"></textarea></div>
+      <fieldset class="field choice" id="rq-side">
+        <legend>Does your organization share health data with partners, receive it, or both?</legend>
+        <label><input type="radio" name="side" value="sender" required> We share data with partners</label>
+        <label><input type="radio" name="side" value="receiver"> We receive data from partners</label>
+        <label><input type="radio" name="side" value="both"> Both</label>
+      </fieldset>
+      <div class="receiver" id="rq-receiver" hidden>
+        <div class="field"><label for="rq-by">Which organization shares data with you?</label><input id="rq-by" name="sharedBy" maxlength="200" autocomplete="off"></div>
+        <div class="field"><label for="rq-by-email">Their contact’s email <span class="opt">(optional)</span></label><input id="rq-by-email" name="sharedByEmail" type="email" maxlength="254" autocomplete="off"></div>
+        <label class="tick"><input type="checkbox" name="mayContact"> You may tell them we asked to receive permissions from them through ConsentAuth.</label>
+      </div>
       <div class="hp" aria-hidden="true"><label for="rq-web">Leave this empty</label><input id="rq-web" name="website" tabindex="-1" autocomplete="off"></div>
-      <p class="form-note">We use these details only to reply to you. Please don't include patient or user information.</p>
+      <p class="form-note">We use these details only to reply to you and, if you tick the box, to contact the organization you name. Please don't include patient or user information.</p>
       <div class="ctas"><button class="btn btn-primary" type="submit">Send request</button></div>
       <p class="form-status" id="rq-status" role="status" aria-live="polite"></p>
     </form>
-    <p class="center or-email">Or email us at <a href="mailto:support@fise.tech?subject=Sender%20account%20request">support@fise.tech</a>.</p>
+    <p class="center or-email">Or email us at <a href="mailto:support@fise.tech?subject=Account%20request">support@fise.tech</a>.</p>
   </div>
 </section>
 
@@ -586,13 +604,17 @@ footer p + p { margin-top: 4px; }
   </div>
 </footer>
 <script>
-/* Request a sender account: sent to ConsentAuth, which emails it to support@fise.tech. Nothing is stored. */
+/* Request an account: sent to ConsentAuth, which emails it to support@fise.tech. Nothing is stored. */
 (function () {
   var form = document.getElementById('request-form');
   if (!form) return;
   var status = document.getElementById('rq-status');
   var button = form.querySelector('button[type="submit"]');
-  var ENDPOINT = 'https://app.consentauth.io/v1/public/sender-requests';
+  var ENDPOINT = 'https://app.consentauth.io/v1/public/account-requests';
+  var receiver = document.getElementById('rq-receiver');
+  form.addEventListener('change', function (e) {
+    if (e.target.name === 'side') receiver.hidden = e.target.value === 'sender';
+  });
   function say(text, ok) { status.textContent = text; status.className = 'form-status ' + (ok ? 'ok' : 'err'); }
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -600,13 +622,27 @@ footer p + p { margin-top: 4px; }
     var missing = ['name', 'email', 'organization'].filter(function (k) { return !f[k].value.trim(); });
     if (missing.length) { say('Please fill in your name, work email and organization.', false); f[missing[0]].focus(); return; }
     if (!f.email.checkValidity()) { say('Please enter a valid work email.', false); f.email.focus(); return; }
+    var side = form.querySelector('input[name="side"]:checked');
+    if (!side) { say('Please choose whether your organization shares data, receives it, or both.', false); form.querySelector('input[name="side"]').focus(); return; }
+    var receives = side.value !== 'sender';
+    if (receives && f.sharedByEmail.value && !f.sharedByEmail.checkValidity()) { say('Please enter a valid email for the organization that shares data with you, or leave it empty.', false); f.sharedByEmail.focus(); return; }
     button.disabled = true; say('Sending…', true);
     fetch(ENDPOINT, {
       method: 'POST', headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ name: f.name.value, email: f.email.value, organization: f.organization.value,
-        message: f.message.value || undefined, website: f.website.value || undefined })
+        side: side.value, website: f.website.value || undefined,
+        sharedBy: receives && f.sharedBy.value.trim() ? f.sharedBy.value : undefined,
+        sharedByEmail: receives && f.sharedByEmail.value.trim() ? f.sharedByEmail.value : undefined,
+        mayContact: receives ? f.mayContact.checked : undefined })
     }).then(function (r) {
-      if (r.status === 202) { form.reset(); say('Thank you. We received your request and will reply by email.', true); return; }
+      if (r.status === 202) {
+        var invite = receives && f.mayContact.checked && f.sharedBy.value.trim();
+        var who = f.sharedBy.value.trim();
+        form.reset(); receiver.hidden = true;
+        say(invite ? 'Thank you. We received your request and will reply by email. We’ll also invite ' + who + ' to ConsentAuth; once they add you as a partner, you’ll get your portal invitation.'
+          : 'Thank you. We received your request and will reply by email.', true);
+        return;
+      }
       return r.json().catch(function () { return {}; }).then(function (b) {
         var d = b && b.detail ? b.detail : '';
         say(/support@fise\.tech/.test(d) ? d : (d ? d + ' ' : '') + 'You can also email us at support@fise.tech.', false);
